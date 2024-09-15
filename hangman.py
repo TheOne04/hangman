@@ -2,9 +2,14 @@ import random
 
 
 def main():
-    # TODO: Pick random word from a words list
-    word = "apple"
-    attempts = []
+    # Pick a random word from words
+    with open("words.txt") as f:
+        words = f.readlines()
+    while True:
+        word = random.choice(words).rstrip("\n")
+        if word:
+            break
+
     wrong_attempts = 0
 
     while True:
