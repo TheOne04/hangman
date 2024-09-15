@@ -117,3 +117,10 @@ def print_blanks(word, attempts):
             blank_string += "-"
 
     print(blank_string)
+
+
+def ask_letter(attempts):
+    while True:
+        letter = input("Guess: ")
+        if letter.isalpha() and len(letter) == 1 and letter not in attempts:
+            return letter
