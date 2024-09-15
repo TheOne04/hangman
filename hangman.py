@@ -10,6 +10,7 @@ def main():
         if word:
             break
 
+    attempts = []
     wrong_attempts = 0
 
     while True:
