@@ -105,3 +105,15 @@ def print_hangman(wrong_attempts):
     ]
 
     print(hangman[wrong_attempts])
+
+
+def print_blanks(word, attempts):
+    blank_string = ""
+
+    for letter in word:
+        if letter in attempts:
+            blank_string += letter
+        else:
+            blank_string += "-"
+
+    print(blank_string)
