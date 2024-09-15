@@ -7,19 +7,26 @@ def main():
     wrong_attempts = 0
 
     while True:
-        if wrong_attempts == 7:
-            print_hangman(wrong_attempts)
-            print("Game Over")
-            break
         print_hangman(wrong_attempts)
         print_blanks(word, attempts)
         letter = ask_letter(attempts)
+
+        # Add to attempts and count wrong attempts
         if letter not in attempts:
             attempts.append(letter)
             if letter not in word:
                 wrong_attempts += 1
+
+        # Check if game over
+        if wrong_attempts == 7:
+            print_hangman(wrong_attempts)
+            print("Game Over")
+            break
+
+        # Check for victory
         if guessed_word(word, attempts):
             print_hangman(wrong_attempts)
+            print_blanks(word, attempts)
             print("You win!")
             break
 
