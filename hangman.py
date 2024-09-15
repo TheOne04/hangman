@@ -2,6 +2,15 @@ import random
 
 
 def main():
+    word = "apple"
+    attempts = []
+    wrong_attempts = 0
+
+    while True:
+        print_hangman(wrong_attempts)
+        print_blanks(word, attempts)
+        letter = ask_letter(attempts)
+
     # Loop until hangman complete or word guessed
     # Choose random word
     # Show hangman
@@ -9,7 +18,6 @@ def main():
     # Show attempts
     # Ask for input
     # Parse and play
-    pass
 
 
 def print_hangman(wrong_attempts):
@@ -124,3 +132,6 @@ def ask_letter(attempts):
         letter = input("Guess: ")
         if letter.isalpha() and len(letter) == 1 and letter not in attempts:
             return letter
+
+
+main()
