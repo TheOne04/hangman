@@ -146,7 +146,7 @@ def print_blanks(word, attempts):
 
 def ask_letter(attempts):
     while True:
-        letter = input("Guess: ")
+        letter = input("Guess: ").lower()
         if letter.isalpha() and len(letter) == 1 and letter not in attempts:
             return letter
 
