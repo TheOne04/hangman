@@ -1,2 +1,2 @@
 # hangman
-An experiment
+Hangman in python
